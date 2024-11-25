@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background:linear-gradient(45deg, #430A5D,#3E065F,#000000);
+  background-size:300%,300%;
+  animation:color 12s ease-in-out infinite;
+
+}
+.background {
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+}
+
+.navbar {
+  width: 100%; 
+  margin-left: 10px;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  background:#f5ebfa;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 12px;
+}
+
+.nav-links li a {
+  position: relative;
+  color:white;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.nav-links li a {
+  position: relative;
+  color: dimgray;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: white; /* Change text color slightly */
+  transform: scale(1.1); /* Slightly scale up the text */
+}
+
+.nav-links li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color:white; /* Ensure the line is visible */
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+  width: 100%;
+}
+
+/* Existing styles remain untouched */
+.nav-links li.center a:before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li.upward a:before {
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+
+.nav-links li.upward a:hover:before {
+  bottom: 0px;
+  opacity: 1;
+}
+
+.nav-links li.forward a:before {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.nav-links li.forward a:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:100px;
+  gap:50px;
+  overflow:auto;
+}
+.card {
+  width: 200px;
+  height: 260px;
+  box-shadow: 10px 10px 10px gray,
+    -10px -10px 10px gray;
+    overflow: hidden;
+    margin:20px;
+    cursor:pointer;
+    opacity: 0; /* Start with invisible */
+  transform: translateY(30px); /* Start from below */
+  animation: fadeInUp 1s forwards; /* Apply animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+img {
+  width: 100%;
+  height: auto;
+  background-size:cover;
+}
+.card:hover {
+  transform: translateY(-15px) scale(1.05); /* Slightly lift and enlarge the card */
+  box-shadow: 8px 15px 30px violet, 8px -15px 30px rgba(0, 0, 0, 0.2); /* Glowing effect with a shadow halo */
+  filter: brightness(1.1); /* Slightly brighten the card */
+}
+
+.card:hover::before {
+  content: ''; /* Create a pseudo-element for overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Ensure it sits on top of the content */
+  border-radius: 30px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Slight zoom effect on the image */
+}
+
+.card .content {
+  position: relative;
+  z-index: 2; /* Ensure text and content stays above the overlay */
+}
+  .card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.card:nth-child(5) {
+  animation-delay: 1s;
+}
+.card:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.card:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.card:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.card:nth-child(9) {
+  animation-delay: 1.8s;
+}
+
+footer {
+text-align: center;
+background-color: #f5ebfa;
+padding:5px;
+margin-left: 10px;
+color: dimgray;
+margin:10px auto;
+max-width:1475px;
+}
+@keyframes color{
+  0%{
+  background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position:0 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 390px) {
+  .navbar {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    padding: 10px;
+    margin: 0;
+  }
+
+  .nav-links li {
+    margin: 8px 0; /* Add vertical spacing between links */
+  }
+
+  .nav-links li a {
+    font-size: 20px; /* Reduce font size for smaller screens */
+    padding: 4px 0;
+  }
+
+  .nav-links li a:before {
+    height: 2px; /* Adjust underline size for smaller text */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    padding: 5px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Subtle divider line */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links li a {
+    font-size: 18px; /* Further reduce font size */
+    padding: 8px 0; /* Compact tappable area */
+  }
+}

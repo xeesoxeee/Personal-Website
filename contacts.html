@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="stylecont.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init({
+        publicKey: "S4UT9Or3iyoLhmZCS",
+      });
+    })();
+  </script>
+  <script src="contact.js"></script>
+</head>
+
+<body>
+  <div class="background">
+    <div class="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li class="center"><a href="home.html">HOME</a></li>
+          <li class="upward"><a href="project.html">GALLERY</a></li>
+          <li class="forward"><a href="contacts.html">COMMISSION</a></li>
+        </ul>
+      </nav>
+    </div>
+  <h1 class="com fadeIn">Have an idea? Let’s bring your creativity to life—contact me for commissions!</h1>
+  
+  <div class ="form-wrapper">
+  <div class="form-container">
+    <form class="form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder = "example@gmail.com" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Lets turn your ideas into art!</label>
+        <textarea name="message" id="message" rows="10" cols="50" required></textarea>
+      <button class="form-submit-btn" type="submit" onclick="sendmail()">Submit</button>
+    </form>
+  </div>
+  </div>
+  </div>
+  <footer>
+  <p>© ALL RIGHTS RESERVED TO ITS RIGHTFUL OWNERS<br>
+  <a style ="color:blue;" href="https://www.facebook.com/harry.escala.3" target="_blank">Harry</a> |
+  <a style ="color: blue;"href="https://www.facebook.com/Kadomura.zzxczjsk" target="_blank">Ryusei</a></p>
+</footer>
+</body>
+
+</html>
