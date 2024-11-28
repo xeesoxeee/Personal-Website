@@ -1,0 +1,357 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  background:linear-gradient(45deg, #430A5D,#3E065F,#000000);
+  background-size:300%,300%;
+  animation:color 12s ease-in-out infinite;
+  color:dimgray;
+
+}
+h1{
+  color:dimgray;
+}
+.background {
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+
+.navbar {
+  width: 100%; 
+  margin-left: 10px;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  background:#f5ebfa;
+  align-items: center;
+  padding: 20px;
+  margin: 10px;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 12px;
+}
+
+.nav-links li a {
+  position: relative;
+  color:white;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+}
+
+.nav-links li a {
+  position: relative;
+  color: dimgray;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: white; /* Change text color slightly */
+  transform: scale(1.1); /* Slightly scale up the text */
+}
+
+.nav-links li a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color:white; /* Ensure the line is visible */
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+  width: 100%;
+}
+
+/* Existing styles remain untouched */
+.nav-links li.center a:before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links li.upward a:before {
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+
+.nav-links li.upward a:hover:before {
+  bottom: 0px;
+  opacity: 1;
+}
+
+.nav-links li.forward a:before {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.nav-links li.forward a:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+ .com {
+      font-family: 'Reenie Beanie', cursive;
+      font-size: 2.5em;
+      color:dimgray;
+      text-align: center;
+      position: relative;
+      top: 170px;
+    }
+.form-wrapper{
+ display: flex; /* Enables Flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  width: 100%; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background: transparent;
+}
+.form-container {
+  height:350px;
+  width: 400px;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+ 
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: #fff;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+  position:relative;
+  left:110px;
+  display: flex;
+align-items: center;
+justify-content: center;
+font-family: inherit;
+color: #717171;
+font-weight: 600;
+width: 40%;
+background: #313131;
+border: 1px solid #414141;
+padding: 12px 16px;
+font-size: inherit;
+gap: 8px;
+margin-top: 8px;
+cursor: pointer;
+border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+input[type="email"], textarea {
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding/border in width */
+  padding: 10px; /* Add padding inside the input */
+  font-size: 16px; /* Text size */
+  border: 1px solid #ccc; /* Add a light border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #1a1a1a; /* Match dark theme */
+  color: #fff; /* Text color for visibility */
+}
+
+input[type="email"]::placeholder, textarea::placeholder {
+  color: #aaa; /* Lighter placeholder text for contrast */
+}
+footer {
+text-align: center;
+background-color: #f5ebfa;
+padding:5px;
+margin-left: 10px;
+color: dimgray;
+margin:10px auto;
+max-width:1475px;
+}
+@keyframes color{
+  0%{
+  background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position:0 50%;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%; /* Make form container take more space on smaller screens */
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .form-container {
+    width: 90%; /* Make form container take more space on smaller screens */
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 390px) {
+  .navbar {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links vertically */
+    padding: 10px;
+    margin: 0;
+  }
+
+  .nav-links li {
+    margin: 8px 0; /* Add vertical spacing between links */
+  }
+
+  .nav-links li a {
+    font-size: 20px; /* Reduce font size for smaller screens */
+    padding: 4px 0;
+  }
+
+  .nav-links li a:before {
+    height: 2px; /* Adjust underline size for smaller text */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    padding: 5px;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Subtle divider line */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links li a {
+    font-size: 18px; /* Further reduce font size */
+    padding: 8px 0; /* Compact tappable area */
+  }
+}
